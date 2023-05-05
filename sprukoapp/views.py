@@ -19,7 +19,7 @@ def form(request):
         userdetails = UserDeatils(username = fullname , passwords = password , email = email , number = phonenumber , birth = Dofbirth) 
         userdetails.save()
         return redirect("/table")
-    return render(request, 'form.html')
+    return render(request,'form.html')
 def table(request):
     userinput = UserDeatils.objects.all()
-    return render(request,'table.html', {"userdata": userinput})
+    return render(request,'table.html',{"userdata": userinput})
