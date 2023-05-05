@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
+from .models import *
 
 # Create your views here.
 
@@ -9,4 +10,16 @@ def formpage(request):
 def tableview(request):
     return render(request, 'table.html')
 def form(request):
+    if request.method == 'POST':
+        fullname = request.POST.get('username')
+        password = request.POST.get('password')
+        email = request.POST.get('email')
+        phonenumber = request.POST.get('number')
+        Dofbirth = request.POST.get('dateofbirth')
+        userdetails = UserDeatils(username = fullname , passwords = password , email = email , number = phonenumber , birth = Dofbirth) 
+        userdetails.save()
+        return redirect("/table")
     return render(request, 'form.html')
+def table(request):
+    userinput = UserDeatils.objects.all()
+    return render(request,'table.html', {"userdata": userinput})

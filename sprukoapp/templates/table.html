@@ -7,4 +7,37 @@
   <div class="text container-fluid dashdiv">
         <h2>Table</h2>
 </div>
+
+<div class="d-flex justify-content-center">
+        <table class="table ">
+            <thead >
+                <tr>
+                    <th>No</th>
+                    <th>UserNmae</th>
+                    <th>E-Mail</th>
+                    <th>Phone Number</th>
+                    <th>Password</th>
+                    <th>Date of Birth</th>
+                    <th colspan="2">Action</th>
+                    
+                </tr>
+                <tbody>
+                    {% for x  in userdata %}
+                    <tr>
+                        
+                        <td>{{x.id}}</td>
+                        <td>{{x.username }}</td>
+                        <td>{{x.email}}</td>
+                        <td>{{x.number}}</td>
+                        <td>{{x.passwords}}</td>
+                        <td>{{x.birth}}</td>
+                        {% comment %} <td><a href="{% url 'delete' x.id  %}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{% url 'edit' x.id  %}" class="btn btn-primary">Edit</a></td> {% endcomment %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </thead>
+
+        </table>
+    </div>
 {% endblock content %}

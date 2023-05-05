@@ -3,5 +3,5 @@ from .views import  *
 urlpatterns = [
     path("home" ,index , name="dashboard") , 
     path('forms',formpage , name="formclick"),
-    path('tabel',tableview , name="tabel")  
+    path('tabel',table , name="tabel")  
 ]
