@@ -29,7 +29,7 @@ def delete(request , id):
     userinput.delete()
     return redirect("/table")
 
-def edit(request):
+def edit(request,id):
     userinput = UserDeatils.objects.get(id=id)
     return render(request,'edit.html',{"userdata":userinput})
 def update(request,id):

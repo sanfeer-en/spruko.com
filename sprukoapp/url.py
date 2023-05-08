@@ -6,5 +6,6 @@ urlpatterns = [
     path('table',table , name="tabel"),
     path("delete/<int:id>", delete , name="delete"), 
     path("edit/<int:id>", edit , name="edit"),
+    path("update/<int:id>", update , name="update"),
     
 ]
