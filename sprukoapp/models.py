@@ -7,3 +7,7 @@ class UserDeatils(models.Model):
     email=models.EmailField()
     number=models.IntegerField()
     birth=models.DateField()
+    
+    def __str__(self):
+        return self.username
+    

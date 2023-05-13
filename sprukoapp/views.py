@@ -35,11 +35,11 @@ def edit(request,id):
 def update(request,id):
     userinput = UserDeatils.objects.get(id=id)
     if request.method == 'POST' :
-        userinput.userName = request.POST['username']
+        userinput.username = request.POST['username']
         userinput.email = request.POST['email']
-        userinput.phoneNumber = request.POST['number']
-        userinput.password = request.POST['password']
-        userinput.dofbirth = request.POST['dateofbirth']
+        userinput.number = request.POST['number']
+        userinput.passwords = request.POST['password']
+        userinput.birth = request.POST['dateofbirth']
         userinput.save()
         return redirect ("/table")
     
